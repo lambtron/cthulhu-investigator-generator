@@ -21,10 +21,7 @@ var calculate = {
   intelligence: (function() { return (d6() + d6() + 6) * 5 }),
   power: (function() { return d6() + d6() + d6() * 5 }),
   education: (function() { return (d6() + d6() + 6) * 5 }),
-  moveRate: (function() { return d6() + d6() + d6() * 5 }),
-  sanity:  (function() { return d6() + d6() + d6() * 5 }),
-  health: (function() { return d6() + d6() + d6() * 5 }),
-  luck: (function() { return d6() + d6() + d6() * 5 }),
+  luck: (function() { return d6() + d6() + d6() * 5 })
 };
 
 /**
@@ -38,6 +35,18 @@ function getStats() {
       stats[prop] = calculate[prop]();
     }
   }
+
+  // Health.
+  stats.health = Math.floor((stats.constitution + stats.size) / 10);
+
+  // Movement rate.
+  stats.movement_rate = 7;
+  if (stats.strength >= stats.size || stats.dexterity >= stats.size) stats.movement_rate = 8;
+  if (stats.strength >= stats.size && stats.dexterity >= stats.size) stats.movement_rate = 9;
+
+  // Sanity.
+  stats.sanity = stats.power;
+
   return stats;
 }
 
