@@ -13,15 +13,15 @@ function d6() {
  */
 
 var calculate = {
-  strength: (function() { return d6() + d6() + d6() * 5 }),
-  constitution: (function() { return d6() + d6() + d6() * 5 }),
+  strength: (function() { return (d6() + d6() + d6()) * 5 }),
+  constitution: (function() { return (d6() + d6() + d6()) * 5 }),
   size: (function() { return (d6() + d6() + 6) * 5 }),
-  dexterity: (function() { return d6() + d6() + d6() * 5 }),
-  appearance: (function() { return d6() + d6() + d6() * 5 }),
+  dexterity: (function() { return (d6() + d6() + d6()) * 5 }),
+  appearance: (function() { return (d6() + d6() + d6()) * 5 }),
   intelligence: (function() { return (d6() + d6() + 6) * 5 }),
-  power: (function() { return d6() + d6() + d6() * 5 }),
+  power: (function() { return (d6() + d6() + d6()) * 5 }),
   education: (function() { return (d6() + d6() + 6) * 5 }),
-  luck: (function() { return d6() + d6() + d6() * 5 })
+  luck: (function() { return (d6() + d6() + d6()) * 5 }),
 };
 
 /**
